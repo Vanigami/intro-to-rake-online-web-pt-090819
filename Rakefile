@@ -1,7 +1,8 @@
 desc 'outputs hello to the terminal'
-task :hello do
-  puts "hello from Rake!"
-end
+namespace :greeting do
+  task :hello do
+    puts "hello from Rake!"
+  end
 
 task :environment do
   require_relative './config/environment'
@@ -12,4 +13,3 @@ namespace :db do
   task :migrate => :environment do
     Student.create_table
   end
-end
